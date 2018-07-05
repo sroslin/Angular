@@ -1,2 +1,0 @@
-# Angular
-Angular Summer Project

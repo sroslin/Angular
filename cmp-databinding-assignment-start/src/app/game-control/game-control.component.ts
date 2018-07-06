@@ -6,6 +6,7 @@ import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/cor
   styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent implements OnInit {
+  gameNum = setInterval(1000);
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +17,6 @@ export class GameControlComponent implements OnInit {
   }
 
   onStopClick() {
-    
+    clearInterval(this.gameNum);
   }
 }

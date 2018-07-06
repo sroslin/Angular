@@ -7,6 +7,9 @@ import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/cor
 })
 export class GameControlComponent implements OnInit {
   gameNum = setInterval(1000);
+  @ViewChild('evenNumber') evenNumber;
+  @ViewChild('oddNumber') oddNumber;
+  @Output() gameNumberEmitter = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {

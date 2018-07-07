@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  loadedList = 'recipe';
+
+  displayList(chooseList: string) {
+      this.loadedList = chooseList;
+  }
 }

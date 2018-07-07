@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   oddNumbers = [];
   evenNumbers = [];
+
+  onStart(num: number) {
+    if (num % 2 === 0) {
+      this.evenNumbers.push(num);
+    } else {
+      this.oddNumbers.push(num);
+    }
+  }
 }

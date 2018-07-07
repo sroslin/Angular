@@ -16,4 +16,12 @@
   </div>
 </div>
 
-<app-game-control></app-game-control>
+<div>
+  <app-game-control
+    (gameNumberEmitter)="onStart($event)">
+  </app-game-control>
+</div>
+<div>
+  <app-odd *ngFor="let onum of oddNumbers" [oddNumber]='onum'></app-odd>
+  <app-even *ngFor="let enum of evenNumbers" [evenNumber]='enum'></app-even>
+</div>

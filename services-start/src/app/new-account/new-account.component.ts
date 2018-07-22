@@ -19,6 +19,6 @@ export class NewAccountComponent {
       name: accountName,
       status: accountStatus
     });
-
+    this.loggingService.logStatusChange(accountStatus);
   }
 }

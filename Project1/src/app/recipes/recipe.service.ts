@@ -6,6 +6,7 @@ import { ShoppingListService } from "../shopping-list/shopping-list.service";
 @Injectable()
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
+  recipeDeleted = new EventEmitter<Recipe[]>();
 
   private recipes: Recipe[] = [
     new Recipe('Tasty Schnitzel', 'A super-tasty Schnitzel - just awesome!', 'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG', [
@@ -26,5 +27,10 @@ export class RecipeService {
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
+  }
+
+  deleteRecipe(recipe: Recipe) {
+    this.recipes.splice(this.recipes.indexOf(recipe), 1);
+    this.recipeDeleted.emit(this.recipes.slice());
   }
 }

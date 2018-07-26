@@ -23,4 +23,13 @@ export class ShoppingListService {
     this.ingredients.splice(0, this.ingredients.length);
     this.ingredientsCleared.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]) {
+    // for (let ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }
+    // BETTER WAY TO DO IT
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
